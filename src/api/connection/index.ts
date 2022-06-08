@@ -1,11 +1,11 @@
 import { request } from '@/utils/axios/request';
-import { ConnectionConf } from './model';
+import { ConnectionConf, UpdateConnectionConf } from './model';
 
 // 连接列表
 export function getConnectionList() {
   return request(
     {
-      url: '/page/connectionlist',
+      url: '/conn/connectionlist',
       method: 'get',
     },
     {
@@ -17,7 +17,7 @@ export function getConnectionList() {
 // 新建连接
 export function newConnection(data: ConnectionConf) {
   return request({
-    url: '/page/newconnection',
+    url: '/conn/newconnection',
     method: 'post',
     data,
   });
@@ -26,10 +26,17 @@ export function newConnection(data: ConnectionConf) {
 // 删除连接
 export function deleteConnection(connectionName: string) {
   return request({
-    url: '/page/delconnection',
+    url: '/conn/delconnection',
     method: 'get',
     params: connectionName,
   });
 }
 
-//
+// 删除连接
+export function updateConnection(updateConf: UpdateConnectionConf) {
+  return request({
+    url: '/conn/updateconnection',
+    method: 'post',
+    data: updateConf,
+  });
+}

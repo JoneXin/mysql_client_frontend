@@ -12,4 +12,6 @@
   import Operator from './operator/index.vue';
 </script>
 
-<style scoped lang="less"></style>
+<style lang="less">
+  @import '@/styles/reset.css';
+</style>

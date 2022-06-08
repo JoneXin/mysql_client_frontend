@@ -26,6 +26,7 @@ export const request = async <T = any>(
     // 参数
     const { successMsg, errorMsg, isGetDataDirectly = true } = options;
     const res = await axiosInstance.request(requestConf);
+
     // message tips
     successMsg && $message.success(successMsg);
     errorMsg && $message.error(errorMsg);

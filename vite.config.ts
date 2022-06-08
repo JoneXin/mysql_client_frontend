@@ -20,7 +20,7 @@ export default () => ({
     port: 8088,
     proxy: {
       '/api': {
-        target: 'http://localhost:7001',
+        target: 'http://localhost:4545',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
